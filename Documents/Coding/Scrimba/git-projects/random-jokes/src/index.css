@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+/*font-family: 'Henny Penny', cursive;*/
+
+body {
+  margin: 0;
+  background-color: #212121;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App{
+  width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.header{
+  font-family: 'Black Ops One', cursive;
+  background-color: #121212;
+  color: aqua;
+  border-radius: 7px;
+  padding: 1px 0px;
+  letter-spacing: 0.05em;
+  border: 3px solid aqua;
+  font-size: 0.9em;
+}
+
+.bubble, .punchline{
+  position: relative;
+  font-family: 'Henny Penny', cursive;
+  background-color: #121212;
+  color: #FFF;
+  width: 80%;
+  min-height: 65px;
+  padding: 5px 15px;
+  margin: 65px auto;
+  border-radius: 7px;
+  word-break: break-all;
+}
+.bubble::before{
+  content: "";
+  position: absolute;
+  left: -30px;
+  bottom: -50px;
+  height: 50px;
+  width: 90px;
+  border-radius: 0px 0px 100%;
+  box-shadow: -2px -2px 0px 0px #121212 inset,
+              -23px 0px 0px 0px #121212 inset,
+              -25px -2px 0px 0px #121212 inset;
+}
+
+.punchline::before{
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: -50px;
+  height: 50px;
+  width: 90px;
+  border-radius: 0px 0px 100%;
+  box-shadow: -2px -2px 0px 0px #121212 inset,
+              -23px 0px 0px 0px #121212 inset,
+              -25px -2px 0px 0px #121212 inset;
+  transform: rotateY(180deg);
+}
+
+
+
+.pl, .nj{
+  border: 0px;
+  background-color: aqua;
+  color: #FFF;
+  padding: 10px 20px;
+  margin: 10px;
+  font-family: 'Black Ops One', cursive;
+  font-size: 1.2em;
+  outline: none;
+}
+.hidden{
+  display: none;
+}
+.pl:hover , .nj:hover{
+  background-color: rgb(55, 212, 212);
+}
+.pl:active , .nj:active{
+  transform: scale(0.95, 0.95);
+  border-radius: 5px;
+}
+
+.copyright{
+  color: #FFF;
+  margin-top: 50px;
+}
+
+.color{
+  color: aqua;
+}
