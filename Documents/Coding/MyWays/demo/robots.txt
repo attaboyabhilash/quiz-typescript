@@ -1,0 +1,12 @@
+# robots.txt file for MyWays.in
+
+User-agent: Googlebot
+Disallow: 
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: *
+Disallow: /
+
+Sitemap: https://www.myways.in/sitemap.xml
