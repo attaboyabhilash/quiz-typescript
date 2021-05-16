@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import QuestionCard from "./components/QuestionCard"
 import { fetchQuizQuestions, Difficulty, QuestionState } from "./apis"
+import HashLoader from "react-spinners/HashLoader";
 
 export type AnswerObject = {
   question: string,
@@ -62,18 +63,18 @@ const App = () => {
     <div className="App">
       <h1>Trivia</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? <button className="start" onClick={startTrivia}>Start Quiz</button> : null}
-      {!gameOver && <p className="score">Score: {score}</p>}
-      {isLoading && <p>Loading...</p> }
-      {!isLoading && !gameOver && (
+      {isLoading && <div className="hash_loader"><HashLoader color="#0984e3" loading={isLoading} size={40} /></div> }
+      {!isLoading && !gameOver && userAnswers.length !== TOTAL_QUESTIONS ? (
         <QuestionCard 
           question={questions[number].question}
           answers={questions[number].answers}
           callback={checkAnswer}
           userAnswer={userAnswers ? userAnswers[number] : undefined}
           questionNum={number + 1}
-          totalQuestions={TOTAL_QUESTIONS} 
+          totalQuestions={TOTAL_QUESTIONS}
+          score={score} 
         />
-      )}
+      ) : !isLoading ? <p className="new_score">Score: {score}</p> : null}
       {!isLoading && !gameOver && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 
         ? 
         (<button className="next" onClick={nextQuestion}>Next</button>)
