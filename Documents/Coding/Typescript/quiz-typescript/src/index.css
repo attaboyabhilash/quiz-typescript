@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
+
+/* https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple&encode=base64 */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0px;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
